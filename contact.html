@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontak Kami - Diskusi Proyek & Konsultasi Pengembangan Web">
+    <title>Kontak | Mari Terhubung & Bekerjasama</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --bg-card-hover: rgba(51, 65, 85, 0.85);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.35);
+            --secondary: #ec4899;
+            --accent: #8b5cf6;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-glow: rgba(255, 255, 255, 0.1);
+            --radius-lg: 20px;
+            --radius-md: 12px;
+            --font-head: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 65%, rgba(236, 72, 153, 0.12) 0%, transparent 40%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header / Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(16px);
+            background: rgba(15, 23, 42, 0.85);
+            border-bottom: 1px solid var(--border-glow);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: var(--font-head);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #fff;
+            text-shadow: 0 0 12px var(--primary-glow);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 99px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            box-shadow: 0 4px 20px var(--primary-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5);
+        }
+
+        /* Banner */
+        .page-banner {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .page-banner h1 {
+            font-family: var(--font-head);
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .page-banner p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 40px 0 80px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .info-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glow);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            backdrop-filter: blur(8px);
+        }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .info-text h4 {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .info-text p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Form */
+        .form-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glow);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            backdrop-filter: blur(12px);
+        }
+
+        .form-card h3 {
+            font-family: var(--font-head);
+            font-size: 1.6rem;
+            color: #fff;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: var(--radius-md);
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-glow);
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 12px var(--primary-glow);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .alert-success {
+            display: none;
+            padding: 14px;
+            border-radius: var(--radius-md);
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            color: #6ee7b7;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-glow);
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glow);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 868px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .page-banner h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                ⚡ <span>ProfilSaya</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="m.html">Tentang Saya</a></li>
+                <li><a href="portfolio.html">Portofolio</a></li>
+                <li><a href="services.html">Layanan</a></li>
+                <li><a href="contact.html" class="active">Kontak</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary">Mari Bicara</a>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Mari Terhubung</h1>
+            <p>Punya pertanyaan, ide proyek, atau tawaran kerjasama? Kirimkan pesan Anda di bawah ini!</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="container contact-section">
+        <div class="contact-grid">
+            <!-- Contact Info Sidebar -->
+            <div class="contact-info">
+                <div class="info-box">
+                    <div class="info-icon">📧</div>
+                    <div class="info-text">
+                        <h4>Alamat Email</h4>
+                        <p>hello@profilsaya.dev</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">📍</div>
+                    <div class="info-text">
+                        <h4>Lokasi</h4>
+                        <p>Jakarta / Remote Worldwide</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">⏰</div>
+                    <div class="info-text">
+                        <h4>Jam Kerja</h4>
+                        <p>Senin - Jumat (09:00 - 18:00 WIB)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form Card -->
+            <div class="form-card">
+                <h3>Kirim Pesan Langsung</h3>
+
+                <div class="alert-success" id="successAlert">
+                    ✅ Terima kasih! Pesan Anda berhasil terkirim. Saya akan membalas segera.
+                </div>
+
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" class="form-control" placeholder="Masukkan nama Anda" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Alamat Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="nama@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subjek / Topik</label>
+                        <input type="text" id="subject" class="form-control" placeholder="Diskusi Proyek Web / Konsultasi" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Pesan Anda</label>
+                        <textarea id="message" class="form-control" placeholder="Tuliskan detail ide atau pertanyaan Anda di sini..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        🚀 Kirim Pesan Sekarang
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#" class="social-link">GH</a>
+                <a href="#" class="social-link">LN</a>
+                <a href="#" class="social-link">TW</a>
+                <a href="#" class="social-link">IG</a>
+            </div>
+            <p>&copy; 2026 ProfilSaya. Seluruh hak cipta dilindungi undang-undang.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const alert = document.getElementById('successAlert');
+            alert.style.display = 'block';
+            this.reset();
+            setTimeout(() => {
+                alert.style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
